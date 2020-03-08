@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"    
+    xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <title>SIMI • Singlelayer</title>
+    <h:outputStylesheet name="css/app.css" />     
+</h:head>
+
+<h:body>
+
+	<h:form id="singlelayers"> 
+	   <p:growl id="growl" sticky="true" />
+	   <p:dataTable id="singleLayerList" var="singleLayer" value="#{singleLayerBacking.singleLayers}" styleClass="borderless">
+
+	      <p:column headerText="Id">
+	         <h:outputText value="#{singleLayer.id}"/>
+	      </p:column>
+	
+          <p:column headerText="Identifier">
+             <h:outputText value="#{singleLayer.identifier}"/>
+          </p:column>
+    
+          <p:column headerText="Title">
+             <h:outputText value="#{singleLayer.title}"/>
+           </p:column>
+    
+           <p:column headerText="Description">
+             <h:outputText value="#{singleLayer.description}"/>
+           </p:column>
+
+           <p:column headerText="Delete">
+             <p:commandButton update="singleLayerList" value="Delete" icon="pi pi-trash" action="#{singleLayerBacking.delete(singleLayer)}" styleClass="danger-btn"/>
+           </p:column>
+
+	
+	     </p:dataTable>
+	     <br/>
+	     <!-- 
+	     <p:commandButton style="float: right" id="save" value="Save" styleClass="ui-priority-primary"
+	                action="#{customersBacking.update}" icon="pi pi-save" update="growl">
+	         <f:ajax execute="@form" render="@form"/> 
+	     </p:commandButton>
+	    -->   
+	</h:form>
+	
+</h:body>
+</html>

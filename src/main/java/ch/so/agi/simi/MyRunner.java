@@ -25,12 +25,11 @@ public class MyRunner implements CommandLineRunner {
         //singleLayer.setInWMS(true);
         //singleLayer.setDataPublished(true);
         singleLayerRepository.save(new SingleLayer("ch.so.agi.av.fixpunkte"));
+        singleLayerRepository.save(new SingleLayer("ch.so.agi.av.liegenschaften"));
         
         singleLayerRepository.findAll().forEach((singleLayer) -> {
             logger.info("{}", singleLayer);
-        });
- 
-        
+        });        
     }
 
 }
