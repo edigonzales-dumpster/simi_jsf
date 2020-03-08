@@ -20,7 +20,7 @@
 	         <h:outputText value="#{singleLayer.id}"/>
 	      </p:column>
 	
-          <p:column headerText="Identifier">
+          <p:column headerText="Identifier" filterBy="#{singleLayer.identifier}" filterMatchMode="contains">
              <h:outputText value="#{singleLayer.identifier}"/>
           </p:column>
     
