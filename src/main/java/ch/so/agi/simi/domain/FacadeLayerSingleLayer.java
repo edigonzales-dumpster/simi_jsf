@@ -31,7 +31,7 @@ public class FacadeLayerSingleLayer {
         this.id = id;
     }
     
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn
     public FacadeLayer getFacadeLayer() {
         return facadeLayer;
@@ -41,7 +41,7 @@ public class FacadeLayerSingleLayer {
         this.facadeLayer = facadeLayer;
     }
     
-    @ManyToOne(cascade = CascadeType.ALL) 
+    @ManyToOne(cascade = CascadeType.MERGE) 
     @JoinColumn
     public SingleLayer getSingleLayer() {
         return singleLayer;
